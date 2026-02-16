@@ -1,0 +1,183 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f9f9f9;
+  color: #333;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Colonne gauche */
+.left {
+  width: 30%;
+  background-color: #f1f1f1;
+  padding: 20px;
+  overflow-y: auto;
+  border-right: 1px solid #ccc;
+}
+
+.left input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 1em;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+}
+
+.left a {
+  text-decoration: none;
+  color: #2a5db0;
+  margin: 3px;
+  display: inline-block;
+}
+
+.left ul {
+  list-style: none;
+  padding-left: 10px;
+  margin: 0 0 15px 0;
+}
+
+.left ul > b {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+.left li {
+  margin: 5px 0;
+}
+
+/* Colonne droite */
+.right {
+  width: 70%;
+  padding: 30px;
+  overflow-y: auto;
+  background-color: #fff;
+}
+
+.right h2, .right h3 {
+  margin-top: 0;
+}
+
+.right .actions a {
+  margin-right: 10px;
+  text-decoration: none;
+  color: #d00;
+  font-weight: bold;
+}
+
+.right a.button {
+  display: inline-block;
+  padding: 8px 12px;
+  background-color: #0066cc;
+  color: white;
+  border-radius: 4px;
+  text-decoration: none;
+  margin-top: 10px;
+}
+.custom-select {
+  appearance: none; /* supprime le style natif (Chrome/Firefox) */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  font-family: inherit;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='gray' height='16' viewBox='0 0 24 24' width='16' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px;
+  cursor: pointer;
+}
+.right form input[type="text"], 
+.right form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.right form button {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.right form button:hover {
+  background-color: #218838;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .left, .right {
+    width: 100%;
+  }
+}
+
+/* ===== Accordéon ===== */
+.acc-item {
+  border-bottom: 1px solid #ddd;
+  padding: 6px 0;
+}
+
+.acc-title {
+  all: unset;                  /* reset look bouton */
+  display: block;
+  width: 100%;
+  font-weight: 700;            /* titres en gras */
+  cursor: pointer;
+  padding: 8px 2px;
+  line-height: 1.2;
+  color: #333;
+  position: relative;
+}
+
+.acc-title::after {            /* petite flèche */
+  content: "";
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid #777;
+  border-bottom: 2px solid #777;
+  transform: translateY(-50%) rotate(45deg);
+  transition: transform 0.2s ease;
+}
+
+.acc-title[aria-expanded="true"]::after {
+  transform: translateY(-50%) rotate(-135deg);
+}
+
+.acc-panel {
+  display: none;               /* masquée par défaut */
+  list-style: none;
+  padding-left: 12px;
+  margin: 6px 0 10px;
+}
+
+.acc-panel li {
+  margin: 4px 0;
+}
+
+/* Harmonise tes styles existants de la colonne gauche */
+.left .acc-title { color: #222; }
+.left .acc-panel a { color: #2a5db0; text-decoration: none; }

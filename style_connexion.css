@@ -1,0 +1,105 @@
+        /*Corps de la page inscription*/
+        body {
+            font-family: Arial, sans-serif;
+            background: #eef2f5;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        form {
+            background: white;
+            padding: 25px;
+            max-width: 500px;
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        input[type="text"], input[type="email"], input[type="password"] {
+            width: 450px;
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+         input[type="submit"] { 
+            width: 475px; 
+            padding: 10px; 
+            margin: 8px 0; 
+            border: 2px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"]:hover {
+            /*background-color: #bbc; /* couleur au survol */
+            color: #0a3eea;
+            border: 2px solid #0a3eea;
+            cursor: pointer;
+        }
+
+        .error { color: rgb(111, 19, 19); font-size: 0.9em; }
+        .success { color: green; font-size: 0.9em; }
+        .msg { color: rgb(126, 41, 41); text-align: center; margin-bottom: 10px; }
+        .container { background: white; padding: 20px; max-width: 500px; margin: auto; border-radius: 8px; text-align: center; }
+
+        #strength {
+            height: 6px;
+            width: 94%;
+            background: #eee;
+            border-radius: 3px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        #strength span {
+            display: block;
+            height: 100%;
+            width: 0%;
+            background-color: #ccc;
+            transition: width 0.3s ease, background-color 0.3s ease;
+        }
+        #strength-label {
+            font-size: 14px;
+            color: #555;
+            transition: color 0.3s ease;
+        }
+
+        .toggle {
+            cursor: pointer;
+            font-size: 0.9em;
+            color: #007BFF;
+            float: right;
+            margin-top: 20px;
+            margin-right: 10px;
+        }
+
+        @media screen and (max-width: 600px) {
+            form { padding: 15px; }
+        }
+        .back-to-login {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .back-to-login a {
+            text-decoration: none;
+            color: #555;
+            font-size: 13px;
+            font-weight: 500;
+            transition: color 0.3s ease, border-bottom 0.3s ease;
+            border-bottom: 1px solid transparent;
+        }
+
+        .back-to-login a:hover {
+            color: #0077cc;
+            border-bottom: 1px solid #0077cc;
+        }
+        .form-title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 30px;
+            letter-spacing: 0.5px;
+        }

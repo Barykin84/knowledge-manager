@@ -1,0 +1,18 @@
+# Configuration sensible
+.env
+
+# Configuration de l'éditeur (Spécifique à ton Mac)
+.vscode/
+
+# Fichiers système Mac (Inutiles sur GitHub)
+.DS_Store
+old_files/
+
+
+# Fichiers temporaires ou logs (Optionnel mais recommandé)
+*.log
+
+# Python (pour tes 5h d'immersion)
+__pycache__/
+.venv/
+*.pyc
